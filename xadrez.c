@@ -2,7 +2,7 @@
 
 int main() {
 
-    int torre = 5, bispo = 5, rainha = 8;
+    int torre = 5, bispo = 5, rainha = 8, cavalo = 2, j =1;
 
     // Torre (for)
 
@@ -25,11 +25,24 @@ int main() {
 
     i = 1; 
     do {
-        printf("A Rainha andou %d casa(s) para a esquerda\n", i);
+        printf("A Rainha andou %d casa(s) para a Esquerda\n", i);
         i++;
     } while (i <= rainha);
 
     printf("\n");
 
+    // Cavalo (for e while)
+
+    for(i = 1; i<cavalo; i++){
+        printf("Cavalo andou %d casa(s) para Baixo\n", i+1);
+    }   while (j < 2){
+        printf("Cavalo andou %d casa(s) para a Esquerda\n", j);        
+        j++;
+    }
+
+    printf("\n");
+
+
+    
     return 0;
 }
