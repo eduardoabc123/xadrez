@@ -1,48 +1,61 @@
 #include <stdio.h>
 
-int main() {
+// Bispo Recursivo
+void bispoRecursivo(int numero) {
+    printf("Movimentos Bispo:\n");
+    for (int i = 1; i <= numero; i++){
+        printf("Cima: %d\n", i);
+        printf("Direita: %d\n", i);
+    } 
+}
 
-    int torre = 5, bispo = 5, rainha = 8, cavalo = 2, j =1;
-
-    // Torre (for)
-
-    for (int i = 1; i<= torre; i++) {
-        printf("A Torre andou %d casa(s) a direita\n", i);
+// Torre Recursiva
+void torreRecursiva(int numero) {
+    printf("Movimentos Torre:\n");
+        for (int i = 1; i<= numero; i++) {
+        printf("Direita: %d\n", i);
     }
     printf("\n");
+}
 
-    // Bispo (while)
-
-    int i = 1;
-    while(i <= bispo) {
-        printf("O Bispo andou %d casa(s) na diagonal (1 para a Direita e 1 para Cima)\n", i);
-        i++;
-    }
-
-    printf("\n");
-
-    //Rainha (do-while)
-
-    i = 1; 
+// Rainha Recursiva
+void rainhaRecursiva(int numero) {
+    int i = 1; 
+    printf("Movimentos Rainha:\n");
     do {
-        printf("A Rainha andou %d casa(s) para a Esquerda\n", i);
+        printf("Esquerda: %d\n", i);
         i++;
-    } while (i <= rainha);
+    } while (i <= numero);
 
     printf("\n");
+}
 
-    // Cavalo (for e while)
-
-    for(i = 1; i<cavalo; i++){
-        printf("Cavalo andou %d casa(s) para Baixo\n", i+1);
+// Cavalo Recursivo
+void cavaloRecursivo(int numero) {
+    int i = 1, j = 1; 
+    printf("Movimentos Cavalo:\n");
+    for(i = 1; i < numero; i++){
+        printf("Cima: %d\n", i+1);
     }   while (j < 2){
-        printf("Cavalo andou %d casa(s) para a Esquerda\n", j);        
+        printf("Direita: %d\n", j);        
         j++;
     }
+}
 
+int main() {
+
+    // Define numeros de casas das pecas
+    int torre = 5, bispo = 5, rainha = 8, cavalo = 2;
+
+    // Chamada Blocos
+    bispoRecursivo(bispo);
+    printf("\n");
+    torreRecursiva(torre);
+    printf("\n");
+    rainhaRecursiva(rainha);
+    printf("\n");
+    cavaloRecursivo(cavalo);
     printf("\n");
 
-
-    
     return 0;
 }
